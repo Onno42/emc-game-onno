@@ -58,7 +58,7 @@ var tekenAlles = function () {
   // speler
   fill("cyan");
   ellipse(spelerX, spelerY, 50, 50);
-  fill("purple");
+  fill("blue");
   circle(spelerX, spelerY, 20, 20);
 
   // punten en health
