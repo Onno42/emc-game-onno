@@ -56,10 +56,10 @@ var tekenAlles = function () {
   // kogel
 
   // speler
-  fill("black");
-  rect(spelerX - 25, spelerY - 25, 50, 50);
-  fill("yellow");
-  ellipse(spelerX, spelerY, 10, 10);
+  fill("cyan");
+  ellipse(spelerX, spelerY, 50, 50);
+  fill("purple");
+  circle(spelerX, spelerY, 20, 20);
 
   // punten en health
 
@@ -87,7 +87,7 @@ function setup() {
   createCanvas(1280, 720);
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
-  background('blue');
+  background('red');
 }
 
 /**
