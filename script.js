@@ -31,7 +31,7 @@ var beweegAlles = function () {
 
   // speler
   if ( keyIsDown(37) ) { spelerX = spelerX - 5}
-  while x = < 1280
+  if ( spelerX < 0) { spelerX = 0; }
   if ( keyIsDown(39) ) { spelerX = spelerX + 5}
   if ( keyIsDown(40) ) { spelerY = spelerY + 5}
   if ( keyIsDown(38) ) { spelerY = spelerY - 5}
