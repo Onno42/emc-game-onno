@@ -56,9 +56,9 @@ var tekenAlles = function () {
   // kogel
 
   // speler
-  fill("cyan");
+  fill("yellow");
   ellipse(spelerX, spelerY, 50, 50);
-  fill("purple");
+  fill("red");
   circle(spelerX, spelerY, 20, 20);
 
   // punten en health
