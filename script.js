@@ -31,12 +31,15 @@ var beweegAlles = function () {
 
   // speler
   if ( keyIsDown(37) ) { spelerX = spelerX - 5}
-  if ( spelerX < 0) { spelerX = 0; }
+
   if ( keyIsDown(39) ) { spelerX = spelerX + 5}
   if ( keyIsDown(40) ) { spelerY = spelerY + 5}
   if ( keyIsDown(38) ) { spelerY = spelerY - 5}
-};
-
+  if (spelerX < 0)     { spelerX = 0;}
+if (spelerX > 1280)    { spelerX = 1280;}
+if (spelerY < 0) { spelerY = 0;}
+if (spelerY > 720) { spelerY = 720;}
+ };
 /**
  * Checkt botsingen
  * Verwijdert neergeschoten vijanden
