@@ -14,6 +14,8 @@ const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
 
+const UP = 37;
+
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 
@@ -34,8 +36,7 @@ var beweegAlles = function () {
  // kogel
 
   // speler
-  if (keyIsDown(37)) { spelerX = spelerX - 5 }
-
+  if (keyIsDown(UP)) { spelerX = spelerX - 5 }
   if (keyIsDown(39)) { spelerX = spelerX + 5 }
   if (keyIsDown(40)) { spelerY = spelerY + 5 }
   if (keyIsDown(38)) { spelerY = spelerY - 5 }
