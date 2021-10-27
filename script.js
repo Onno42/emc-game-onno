@@ -31,7 +31,7 @@ var vijandY = 0 // y-positie van speler
  */
 var beweegAlles = function () {
   // vijand
- vijandY=vijandY+1;
+ vijandY=vijandY+10;
  if (vijandY > 720) { vijandY = 0}
  // kogel
 
@@ -52,7 +52,13 @@ var beweegAlles = function () {
  */
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
+if ( (vijandY-spelerY) > -50 &&
+     (vijandY-spelerY) < 50 && 
+     (vijandX-spelerX) > -50 &&
+     (vijandX-spelerX) < 50 
+   ) { console.log('hp')
 
+   }
   // botsing kogel tegen vijand
 
 };
@@ -77,8 +83,7 @@ var tekenAlles = function () {
   fill("yellow");
   ellipse(spelerX, spelerY, 50, 50);
   fill("red");
-  circle(spelerX, spelerY, 20, 20);
-
+  ellipse(spelerX,spelerY,20,20)
   // punten en health
 
 };
