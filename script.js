@@ -18,7 +18,7 @@ const UP = 37;
 
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
-
+var HP = 100 // hp
 var vijandX = 700 // x-positie van speler
 var vijandY = 0 // y-positie van speler
 
@@ -56,11 +56,11 @@ if ( (vijandY-spelerY) > -50 &&
      (vijandY-spelerY) < 50 && 
      (vijandX-spelerX) > -50 &&
      (vijandX-spelerX) < 50 
-   ) { console.log('hp')
-
+   ) { console.log('HP')
+     HP= HP-1
    }
   // botsing kogel tegen vijand
-
+ 
 };
 
 /**
@@ -68,13 +68,20 @@ if ( (vijandY-spelerY) > -50 &&
  */
 var tekenAlles = function () {
   // achtergrond
-  fill("green")
-  rect(0, 0, 1280, 720)
+  fill("black");
+  rect(0, 0, 1280, 720);
+  // inforegel
+  fill("green");
+  textSize(32);
+  text('HP: ' +HP , 50, 70);
+  
+
   // vijand
   fill("blue");
   rect(vijandX, vijandY, 50, 50)
   fill("white")
   ellipse(vijandX + 25, vijandY + 25, 10, 10)
+  
   // kogel
 
   // speler
@@ -123,7 +130,7 @@ function draw() {
     beweegAlles();
     verwerkBotsing();
     tekenAlles();
-    if (checkGameOver()) {
+    if (checkGameOver(HP<=0)) {
       spelStatus = GAMEOVER;
     }
   }
