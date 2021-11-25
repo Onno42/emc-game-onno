@@ -19,6 +19,7 @@ const UP = 37;
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 var HP = 100 // hp
+var punten = 0 // punten
 var vijandX = 700 // x-positie van speler
 var vijandY = 0 // y-positie van speler
 
@@ -60,7 +61,7 @@ if ( (vijandY-spelerY) > -50 &&
      HP= HP-1
    }
   // botsing kogel tegen vijand
- 
+ punten= punten + 0.2 ;
 };
 
 /**
@@ -74,7 +75,7 @@ var tekenAlles = function () {
   fill("green");
   textSize(32);
   text('HP: ' +HP , 50, 70);
-  
+  text('POINTS: ' +floor(punten) , 50,40);
 
   // vijand
   fill("blue");
@@ -95,13 +96,6 @@ var tekenAlles = function () {
 
 };
 
-/**
- * return true als het gameover is
- * anders return false
- */
-var checkGameOver = function () {
-  return false;
-};
 
 /* ********************************************* */
 /* setup() en draw() functies / hoofdprogramma   */
@@ -130,12 +124,14 @@ function draw() {
     beweegAlles();
     verwerkBotsing();
     tekenAlles();
-    if (checkGameOver(HP<=0)) {
+    if (HP<=0) {
       spelStatus = GAMEOVER;
     }
   }
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
-
+   textSize(32);
+   text("YOU DIED!!!", 50,500);
+   
   }
 }
