@@ -128,10 +128,12 @@ function draw() {
       spelStatus = GAMEOVER;
     }
   }
+  
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
    textSize(32);
-   text("YOU DIED!!!", 50,500);
-   
+   background('black');
+   text("GET RECKED MOTHAFUCKAAAAA", 50,500);
+   text('POINTS: ' +floor(punten) , 50,600);
   }
 }
