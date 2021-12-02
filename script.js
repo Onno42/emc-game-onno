@@ -22,6 +22,12 @@ var HP = 100 // hp
 var punten = 0 // punten
 var vijandX = 700 // x-positie van speler
 var vijandY = 0 // y-positie van speler
+var vijandX1 = 700 // x-positie van speler
+var vijandY1 = 0 // y-positie van speler
+var vijandX2 = 850 // x-positie van speler
+var vijandY2 = 0 // y-positie van speler
+var vijandX3 = 550 // x-positie van speler
+var vijandY3 = 0 // y-positie van speler
 
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
@@ -34,6 +40,7 @@ var beweegAlles = function () {
   // vijand
  vijandY=vijandY+10;
  if (vijandY > 720) { vijandY = 0}
+ 
  // kogel
 
   // speler
@@ -53,6 +60,8 @@ var beweegAlles = function () {
  */
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
+  for (var i = 0; i < 8; i++) {
+  vijandX = i* 200;
 if ( (vijandY-spelerY) > -50 &&
      (vijandY-spelerY) < 50 && 
      (vijandX-spelerX) > -50 &&
@@ -60,6 +69,8 @@ if ( (vijandY-spelerY) > -50 &&
    ) { console.log('HP')
      HP= HP-1
    }
+  }
+   
   // botsing kogel tegen vijand
  punten= punten + 0.2 ;
 };
@@ -78,10 +89,13 @@ var tekenAlles = function () {
   text('POINTS: ' +floor(punten) , 50,40);
 
   // vijand
+  for (var i = 0; i < 8; i++) {
+  vijandX = i* 200;
   fill("blue");
-  rect(vijandX, vijandY, 50, 50)
+  rect(vijandX - 25, vijandY - 25, 50, 50)
   fill("white")
-  ellipse(vijandX + 25, vijandY + 25, 10, 10)
+  ellipse(vijandX , vijandY , 10, 10)
+  }
   
   // kogel
 
