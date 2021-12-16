@@ -28,7 +28,8 @@ var vijandX2 = 850 // x-positie van speler
 var vijandY2 = 0 // y-positie van speler
 var vijandX3 = 550 // x-positie van speler
 var vijandY3 = 0 // y-positie van speler
-
+var kogelx = 600 // kogel
+var kogely = 600 // kogel
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -40,9 +41,26 @@ var beweegAlles = function () {
   // vijand
  vijandY=vijandY+10;
  if (vijandY > 720) { vijandY = 0}
- 
- // kogel
 
+ // kogel
+ if (keyIsDown(32))
+{kogelx = spelerX}
+if (keyIsDown(32))
+{kogely = spelerY }
+
+kogely = kogely - 5;
+
+
+
+
+ for (var i = 0; i < 8; i++) {
+  vijandX = i* 200;
+if ( (kogely-spelerY) > -50 &&
+     (kogely-spelerY) < 50 && 
+     (kogelx-spelerX) > -50 &&
+     (kogelx-spelerX) < 50 
+   ) ;
+  } 
   // speler
   if (keyIsDown(UP)) { spelerX = spelerX - 5 }
   if (keyIsDown(39)) { spelerX = spelerX + 5 }
@@ -95,9 +113,15 @@ var tekenAlles = function () {
   rect(vijandX - 25, vijandY - 25, 50, 50)
   fill("white")
   ellipse(vijandX , vijandY , 10, 10)
+
+  // kogel
+  fill("yellow");
+  ellipse(kogelx, kogely, 10 ,10)
   }
   
-  // kogel
+  
+
+
 
   // speler
   fill("blue")
